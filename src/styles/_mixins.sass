@@ -1,0 +1,41 @@
+@mixin button
+  background: transparent
+  border: none
+  cursor: pointer
+  border-radius: .3rem
+  &:hover, &:active, &:focus
+    outline: none
+  span
+    color: #d3d3d3
+    font-size: 3rem
+    transition: all .2s ease-in
+@mixin toggle
+  width: 4rem
+  height: 2.2rem
+  background: #fff
+  position: relative
+  display: inline-block
+  border-radius: 99rem
+  transition: 0.4s
+
+  &::after
+    content: ''
+    position: absolute
+    display: block
+    width: 1.6rem
+    height: 1.6rem
+    border-radius: 50%
+    border: 1px solid $input
+    top: .2rem
+    left: .2rem
+    z-index: 2
+    background: $input
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2)
+    transition: 0.4s
+    opacity: .7
+
+// input:checked + label
+//   background: $input
+// input:checked + label::after
+//   background: $input
+//   left: 40px
