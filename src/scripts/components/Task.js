@@ -3,8 +3,12 @@ import React from 'react';
 import {Checkbox} from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import IconButton from '@material-ui/core/IconButton';
+import {removeElemAction} from '../redux/actions/actions';
+import {useDispatch} from 'react-redux';
 
 export function Task({task}) {
+  const dispatch = useDispatch();
+
   const newListElemDate = () => {
     const newDate = task.date ? new Date(task.date) : new Date();
 
@@ -61,7 +65,7 @@ export function Task({task}) {
         <IconButton
           className="button"
           onClick={() => {
-            task.id;
+            dispatch(removeElemAction(task));
           }}
         >
           <DeleteIcon className="icon delete-icon" />

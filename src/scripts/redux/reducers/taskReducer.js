@@ -20,10 +20,10 @@ export function taskReducer(state = initialState, action) {
     case 'REMOVE_ELEM_ACTION':
       return {
         ...state,
-        tasks: state.tasks.filter(() => {
-          return !action.payload;
-        }),
+        tasks: state.tasks.filter((elem) => elem !== action.payload),
       };
+    case 'CLEAR_LIST_ACTION':
+      return {...state, tasks: []};
     default:
       return state;
   }

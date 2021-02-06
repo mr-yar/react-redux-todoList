@@ -9,9 +9,11 @@ import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import SortIcon from '@material-ui/icons/Sort';
 
 import './styles/main.sass';
+import {useDispatch} from 'react-redux';
+import {clearListAction} from './scripts/redux/actions/actions';
 
 function App() {
-
+  const dispatch = useDispatch();
   return (
     <div className="container">
       <h1 className="title">{'Todo'} List</h1>
@@ -34,7 +36,12 @@ function App() {
       <Input />
 
       <div className="nav">
-        <IconButton className="button">
+        <IconButton
+          className="button"
+          onClick={() => {
+            dispatch(clearListAction());
+          }}
+        >
           <DeleteForeverIcon className="icon" />
         </IconButton>
         <IconButton className="button">
@@ -45,5 +52,3 @@ function App() {
   );
 }
 export default App;
-// const appWrapper = connect()(App);
-// export default appWrapper;

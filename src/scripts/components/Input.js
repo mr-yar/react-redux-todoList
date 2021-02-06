@@ -15,7 +15,7 @@ export function Input() {
 
   function addElem() {
     const todo = {
-      id: lastTask.id + 1,
+      id: lastTask ? lastTask.id + 1 : 1,
       title: inputValue,
       date: new Date(),
       done: false,
