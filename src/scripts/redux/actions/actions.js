@@ -11,3 +11,9 @@ export function clearListAction() {
 export function inputHandler(value) {
   return {type: 'INPUT_HANDLER', payload: value};
 }
+export function switchHandler(value) {
+  return {type: 'SWITCH_HANDLER', payload: value};
+}
+export function checkboxHandler(elem) {
+  return {type: 'CHECKBOX_HANDLER', payload: elem};
+}

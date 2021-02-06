@@ -9,13 +9,11 @@ import {useDispatch, useSelector} from 'react-redux';
 export function Input() {
   const dispatch = useDispatch();
   const {inputValue} = useSelector((store) => store.inputReducer);
-  const lastTask = useSelector(
-    (store) => store.taskReducer.tasks
-  ).slice(-1)[0];
+  const {uuid} = useSelector((store) => store.taskReducer);
 
   function addElem() {
     const todo = {
-      id: lastTask ? lastTask.id + 1 : 1,
+      id: uuid,
       title: inputValue,
       date: new Date(),
       done: false,

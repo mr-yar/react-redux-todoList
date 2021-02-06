@@ -3,7 +3,10 @@ import React from 'react';
 import {Checkbox} from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import IconButton from '@material-ui/core/IconButton';
-import {removeElemAction} from '../redux/actions/actions';
+import {
+  removeElemAction,
+  checkboxHandler,
+} from '../redux/actions/actions';
 import {useDispatch} from 'react-redux';
 
 export function Task({task}) {
@@ -45,23 +48,22 @@ export function Task({task}) {
     }
     return <span className="list-elem__date">{date()}</span>;
   };
-
+  function classNameChecked(classes) {
+    return task.done ? `${classes} checked` : classes;
+  }
   return (
     <li className="list-elem" data-date={task.date}>
-      <span className="list-elem__text" data-checked={task.done}>
+      <span className={classNameChecked('list-elem__text')}>
         {task.title}
       </span>
       {newListElemDate()}
       <div className="elem-nav">
-        <IconButton
-          className="button checkbox-button"
-          data-checked="false"
-          onClick={() => {
-            task.done = !task.done;
-          }}
-        >
-          <Checkbox className="icon checkbox-icon" />
-        </IconButton>
+        <Checkbox
+          className="icon checkbox-icon"
+          checked={task.done}
+          onChange={() => dispatch(checkboxHandler(task.id))}
+        />
+
         <IconButton
           className="button"
           onClick={() => {

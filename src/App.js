@@ -10,10 +10,16 @@ import SortIcon from '@material-ui/icons/Sort';
 
 import './styles/main.sass';
 import {useDispatch} from 'react-redux';
-import {clearListAction} from './scripts/redux/actions/actions';
+import {clearListAction, switchHandler} from './scripts/redux/actions/actions';
 
 function App() {
   const dispatch = useDispatch();
+
+  function switchChange(event) {
+    const value = event.target.checked;
+    dispatch(switchHandler(value));
+
+  }
   return (
     <div className="container">
       <h1 className="title">{'Todo'} List</h1>
@@ -31,6 +37,7 @@ function App() {
           className="switch"
           name="checkedB"
           inputProps={{'aria-label': 'primary checkbox'}}
+          onChange={switchChange}
         />
       </label>
       <Input />
