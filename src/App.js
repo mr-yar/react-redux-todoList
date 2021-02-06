@@ -1,16 +1,17 @@
 import React from 'react';
 
-import {Input} from './scripts/components/Input';
+import {List} from './scripts/components/List';
 
+import {Input} from './scripts/components/Input';
 import Switch from '@material-ui/core/Switch';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import SortIcon from '@material-ui/icons/Sort';
 
 import './styles/main.sass';
-import {List} from './scripts/components/List';
 
 function App() {
+
   return (
     <div className="container">
       <h1 className="title">{'Todo'} List</h1>
