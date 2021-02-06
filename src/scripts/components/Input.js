@@ -1,10 +1,11 @@
 import React from 'react';
 
+import {useDispatch, useSelector} from 'react-redux';
+
 import {addElemAction, inputHandler} from '../redux/actions/actions';
 
 import IconButton from '@material-ui/core/IconButton';
 import AddIcon from '@material-ui/icons/Add';
-import {useDispatch, useSelector} from 'react-redux';
 
 export function Input() {
   const dispatch = useDispatch();

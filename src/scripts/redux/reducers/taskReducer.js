@@ -3,6 +3,7 @@ const initialState = {
   sortedByCompletedTasks: [],
   uuid: 0,
 };
+
 export function taskReducer(state = initialState, action) {
   switch (action.type) {
     case 'ADD_ELEM_ACTION':
@@ -45,6 +46,7 @@ export function taskReducer(state = initialState, action) {
         default:
           return state;
       }
+
     case 'CHECKBOX_HANDLER':
       return {
         ...state,
@@ -54,6 +56,7 @@ export function taskReducer(state = initialState, action) {
             : item;
         }),
       };
+
     default:
       return state;
   }

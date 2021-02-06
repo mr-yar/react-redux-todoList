@@ -1,13 +1,15 @@
 import React from 'react';
 
-import {Checkbox} from '@material-ui/core';
-import DeleteIcon from '@material-ui/icons/Delete';
-import IconButton from '@material-ui/core/IconButton';
+import {useDispatch} from 'react-redux';
+
 import {
   removeElemAction,
   checkboxHandler,
 } from '../redux/actions/actions';
-import {useDispatch} from 'react-redux';
+
+import {Checkbox} from '@material-ui/core';
+import DeleteIcon from '@material-ui/icons/Delete';
+import IconButton from '@material-ui/core/IconButton';
 
 export function Task({task}) {
   const dispatch = useDispatch();
