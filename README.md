@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# ToDo on React Redux
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+See the demo: https://todo-on-reactredux.web.app
 
 ## Available Scripts
 

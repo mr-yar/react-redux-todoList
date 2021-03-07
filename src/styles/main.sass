@@ -24,6 +24,23 @@ button
   margin: 0
   padding: 0
 
+.button
+
+  width: $size
+  height: $size
+  .icon
+    width: $size
+    height: $size
+    color: white
+
+.icon
+  width: $size
+  height: $size
+  .MuiSvgIcon-root
+    width: $size
+    height: $size
+    color: white
+
 .container
   display: flex
   margin: 3rem auto auto
@@ -54,6 +71,7 @@ button
   font-size: 2rem
   padding: 1rem
   width: 80%
+  margin-right: 3rem
 
 // &:active, &:focus, &:hover
 //   outline: none
@@ -117,16 +135,13 @@ button
     color: #ffffff
     font-size: 4rem
 .add-elem-btn
-  flex-basis: 10%
+  flex-basis: 30%
   margin: 2rem
-  @include button
-  span
-    color: #ffffff
-    font-size: 4.5rem
-    &:hover
-      color: darken(#ffffff, 10%)
-    &:active
-      color: darken(#ffffff, 25%)
+  .icon
+    width: 5rem
+    height: 5rem
+  .MuiButtonBase-root
+    margin: 2rem
 .remove-all-btn
   @include button
   span
@@ -169,22 +184,7 @@ button
   width: 100%
 
 
-.button
 
-  width: $size
-  height: $size
-  .icon
-    width: $size
-    height: $size
-    color: white
-
-.icon
-  width: $size
-  height: $size
-  .MuiSvgIcon-root
-    width: $size
-    height: $size
-    color: white
 .switch
   color: $primary
 
@@ -225,6 +225,7 @@ button
     &__date
       top: .2rem
       right: 1rem
+
 @media screen and (max-width: 576px)
   .list-elem
     padding-left: 2rem
@@ -237,6 +238,7 @@ button
   .adding
     input
       margin-left: 2rem
+      margin-right: auto
     .add-elem-btn
       margin: 1rem
   .nav

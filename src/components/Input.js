@@ -2,7 +2,7 @@ import React from 'react';
 
 import {useDispatch, useSelector} from 'react-redux';
 
-import {addElemAction, inputHandler} from '../redux/actions/actions';
+import {addElemAction, inputHandler} from '../redux/actions';
 
 import IconButton from '@material-ui/core/IconButton';
 import AddIcon from '@material-ui/icons/Add';
@@ -13,6 +13,7 @@ export function Input() {
   const {uuid} = useSelector((store) => store.taskReducer);
 
   function addElem() {
+    if (!inputValue.trim()) return;
     const todo = {
       id: uuid,
       title: inputValue,
@@ -37,7 +38,7 @@ export function Input() {
         onChange={inputChange}
         value={inputValue}
       />
-      <IconButton className="button" onClick={addElem}>
+      <IconButton className="button add-elem-btn" onClick={addElem}>
         <AddIcon className="icon" />
       </IconButton>
     </div>

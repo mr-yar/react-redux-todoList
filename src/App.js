@@ -1,16 +1,14 @@
 import React from 'react';
-
-import {List} from './scripts/components/List';
-
-import {Input} from './scripts/components/Input';
+import {useDispatch} from 'react-redux';
+import {clearListAction, switchHandler} from './redux/actions';
+import {List} from './components/List';
+import {Input} from './components/Input';
 import Switch from '@material-ui/core/Switch';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import SortIcon from '@material-ui/icons/Sort';
-
 import './styles/main.sass';
-import {useDispatch} from 'react-redux';
-import {clearListAction, switchHandler} from './scripts/redux/actions/actions';
+
 
 function App() {
   const dispatch = useDispatch();
@@ -18,8 +16,8 @@ function App() {
   function switchChange(event) {
     const value = event.target.checked;
     dispatch(switchHandler(value));
-
   }
+
   return (
     <div className="container">
       <h1 className="title">{'Todo'} List</h1>
